@@ -87,6 +87,14 @@ open class Swifty360View: UIView {
             return cameraController.allowedPanGesturePanningAxes
         }
     }
+    open var eulerAngles : SCNVector3 {
+        get {
+            return cameraController.eulerAngles
+        }
+        set(e) {
+            cameraController.eulerAngles = e
+        }
+    }
 
     private var underlyingSceneSize: CGSize!
     private var sceneView: SCNView!

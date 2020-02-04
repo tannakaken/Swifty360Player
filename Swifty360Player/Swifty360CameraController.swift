@@ -101,6 +101,16 @@ open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
             return panGesturePanningAxes
         }
     }
+    // Computed Property
+    open var eulerAngles : SCNVector3 {
+        get {
+            return pointOfView.eulerAngles
+        }
+        set(e) {
+            pointOfView.eulerAngles = e
+            currentPosition = CGPoint.init(x: e.y.getCGFloat(), y: e.x.getCGFloat())
+        }
+    }
 
     // private variables
     internal var view: SCNView!
